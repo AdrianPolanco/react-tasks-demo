@@ -1,10 +1,8 @@
-import { Guid } from "guid-typescript";
+import BaseTask from "./BaseTask";
 
-export default interface Task {
-    id: Guid;
-    title: string;
-    description: string;
+type Task = BaseTask & {
     created_at: Date;
-    due_date: Date;
-    completed: boolean;
-}
+    last_update_at: Date | null;
+};
+
+export default Task;
